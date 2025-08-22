@@ -1,19 +1,14 @@
-body {
-  margin: 0;
-  font-family: "Arial", sans-serif;
-  background: #c8dfdb;
-}
-
 .auth-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background: #c8dfdb;
 }
 
 .auth-card {
   width: 100%;
-  max-width: 600px;
+  max-width: 650px;
   background: white;
   border-radius: 6px;
   overflow: hidden;
@@ -38,9 +33,25 @@ body {
   color: #e0e0e0;
 }
 
+.auth-body {
+  padding: 25px;
+}
 
-form {
-  display: flex;
-  flex-direction: column;
+.signup-form .row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 15px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+  .signup-form .row {
+    grid-template-columns: 1fr !important;
+  }
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .signup-form .row {
+    grid-template-columns: 1fr !important; 
+  }
 }

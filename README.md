@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# React Login & Signup App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a small React project I made to practice the basics — login and signup flow with proper validations, routing, and a clean UI.  
+It’s kept simple but has all the common things you’d expect in a real app like form validations, toasts, and responsive design.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# What’s Inside
+- Login and Signup screens (both responsive)
+- Proper input validations:
+  - Name → alphabets only  
+  - Username → letters, numbers, and `. _ -`  
+  - Password → same rules as username but can’t be the same as the username  
+  - Confirm Password → must match password  
+  - Email → must be a Gmail ID (`something@gmail.com`)  
+  - Phone → must start with country code (e.g. `+91`) and then 10 digits
+- Shows error messages right under the fields when you type something wrong
+- Toast notifications (success/error) using **React-Toastify**
+- Password fields with **show/hide toggle** (FontAwesome icons)
+- Reusable components (`Input`, `Button`, `AuthLayout`, `Toast`)
+- Navigation handled by **react-router-dom**
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Tech Used
+- React (create-react-app)
+- React Router DOM
+- React Toastify
+- FontAwesome Icons
+- Plain CSS (no heavy UI library, just custom styles)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Project Structure
+src/
+┣ components/
+┃ ┣ AuthLayout/ → wrapper for login/signup pages
+┃ ┣ Button/ → common button
+┃ ┣ Input/ → input with label, error & toggle password
+┃ ┗ Toast/ → common toast helper
+┣ pages/
+┃ ┣ Login.js
+┃ ┗ Signup.js
+┣ utils/
+┃ ┗ validations.js
+┣ App.js
+┣ App.css
+┗ index.js
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this repo:
+ 
+   git clone https://github.com/hemantarora81/react-login-signup.git
+   cd react-login-signup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install dependencies:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+npm install
+Install extra libraries used:
 
-### `npm run eject`
+npm install react-router-dom react-toastify @fortawesome/react-fontawesome @fortawesome/free-solid-svg-icons @fortawesome/fontawesome-free
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Start the app:
+npm start
+Open http://localhost:3000 in your browser.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+![SignUp Page](image.png)
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Login Page](image-1.png)
