@@ -25,7 +25,6 @@ const Signup = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  // ✅ handleChange also validates that single field
   const handleChange = (field, value) => {
     setForm({ ...form, [field]: value });
 
@@ -41,7 +40,6 @@ const Signup = () => {
       case "password":
         if (!validatePassword(value, form.username))
           fieldError = "Invalid password or same as username";
-        // also check confirm password live
         if (form.confirm && form.confirm !== value) {
           setErrors((prev) => ({ ...prev, confirm: "Passwords must match" }));
         } else {

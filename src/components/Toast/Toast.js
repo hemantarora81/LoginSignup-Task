@@ -1,7 +1,6 @@
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// Custom common toast handler
 const Toast = {
   success: (message) =>
     toast.success(message, {
@@ -48,7 +47,7 @@ const Toast = {
       autoClose: 3000,
       theme: "colored",
       style: {
-        background: "#f9a825", // amber
+        background: "#f9a825", 
         color: "#000",
         fontWeight: "500",
       },

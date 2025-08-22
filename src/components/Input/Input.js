@@ -7,7 +7,6 @@ const Input = ({ label, type = "text", value, onChange, error,placeholder="" }) 
   const [show, setShow] = useState(false);
   const isPassword = type === "password";
 
-  // dynamically set input type
   const inputType = isPassword ? (show ? "text" : "password") : type;
 
   return (
@@ -21,18 +20,14 @@ const Input = ({ label, type = "text", value, onChange, error,placeholder="" }) 
           onChange={(e) => {
             let val = e.target.value;
 
-            // special case: phone number input
             if (label.toLowerCase().includes("phone")) {
-              // allow only + and digits
               val = val.replace(/[^0-9+]/g, "");
-
-              // ensure + only at start
               if (val.indexOf("+") > 0) val = val.replace("+", "");
 
               const match = val.match(/^(\+\d{1,3})(\d*)$/);
               if (match) {
                 const country = match[1];
-                let number = match[2].slice(0, 10); // max 10 digits
+                let number = match[2].slice(0, 10); 
                 val = country + number;
               }
             }

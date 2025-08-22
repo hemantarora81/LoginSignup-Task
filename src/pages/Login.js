@@ -68,7 +68,7 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      Toast.success("Login Successful 🎉");
+      Toast.success("Login Successful!");
       navigate("/login");
     } else {
       Toast.error("Please fix the errors");
